@@ -16,9 +16,13 @@ p {
 }
 
 .box {
-  background-color: blue;
+  background-color: rgb(57, 0, 179);
   color: white;
   border: 1px solid black;
+}
+
+.red {
+  background-color: red;
 }
 
 .big {
