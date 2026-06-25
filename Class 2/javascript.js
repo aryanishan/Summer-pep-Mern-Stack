@@ -22,3 +22,19 @@ function addNumbers(x, y, z){
 
 let result = addNumbers(num1, num2, num3);
 console.log(result);
+
+console.log("Aryan is " + 20 + " years old.");
+
+
+function outer(){
+  function inner(){
+    console.log("This is the inner function.");
+  }
+
+  console.log("This is the outer function.");
+  outer.inner = inner;
+}
+
+outer();
+
+outer.inner();
