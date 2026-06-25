@@ -11,3 +11,14 @@ function sayHello(){
 sayHello();
 
 console.log(a + b);
+
+let num1 = 5;
+let num2 = 6;
+let num3 = 7;
+
+function addNumbers(x, y, z){
+  return x + y + z;
+}
+
+let result = addNumbers(num1, num2, num3);
+console.log(result);
