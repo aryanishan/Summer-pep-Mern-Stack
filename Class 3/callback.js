@@ -23,3 +23,20 @@ function placeOrder(customerName, callback){
     callback(order);
   }, 2000);
 }
+
+function prepareOrder(order, callback){
+  console.log(`Preparing Order #${order.id}...`);
+
+  setTimeout(() => {
+    console.log("Items being prepared.");
+
+    order.items.forEach(item => {
+      console.log(`- ${item}`);
+    });
+
+    order.status = "Prepared";
+
+    console.log(`Order #${order.id} is ready.`);
+    callback(order);
+  }, 3000);
+}
