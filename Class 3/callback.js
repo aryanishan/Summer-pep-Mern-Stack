@@ -40,3 +40,16 @@ function prepareOrder(order, callback){
     callback(order);
   }, 3000);
 }
+
+
+function deliverOrder(order, callback){
+  console.log(`Delivery partner picked Order #${order.id}`);
+
+  setTimeout(() => {
+    order.status = "Delivered";
+
+    console.log(`Order #${order.id} delivered successfully.`);
+    callback(order);
+  }, 2000);
+}
+
