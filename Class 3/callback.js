@@ -53,3 +53,15 @@ function deliverOrder(order, callback){
   }, 2000);
 }
 
+function collectFeedback(order){
+  console.log(`Customer received Order #${order.id}. Please rate your expereince.`);
+}
+
+placeOrder("Aryan", function(order) {
+  prepareOrder(order, function(prepareOrder) {
+    deliverOrder(prepareOrder, function(deliverOrder) {
+      collectFeedback(deliverOrder);
+    });
+  });
+});
+
