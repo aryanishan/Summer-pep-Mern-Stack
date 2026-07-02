@@ -22,59 +22,69 @@ promise.then((data) => {
   console.log("Operation completed.");
 })
 
-function login(callback) {
-  console.log("Logging in...");
+function login() {
+  return new Promise((resolve, reject) => {
+    console.log("Logging in...");
 
-  setTimeout(() => {
-    console.log("Logged in successfully!");
-    callback();
-  }, 5000);
+    setTimeout(() => {
+      console.log("Logged in successfully!");
+      resolve();
+    }, 5000);
+  });
 }
 
-function getUser(callback) {
-  console.log("Getting user data...");
+function getUser() {
+  return new Promise((resolve, reject) => {
+    console.log("Getting user data...");
 
-  setTimeout(() => {
-    console.log("User details loaded");
-    callback();
-  }, 2000);
+    setTimeout(() => {
+      console.log("User details loaded");
+      resolve();
+    }, 2000);
+  });
 }
 
-function getUserPosts(callback){
-  console.log("Getting user posts...");
+function getUserPosts() {
+  return new Promise((resolve, reject) => {
+    console.log("Getting user posts...");
 
-  setTimeout(() => {
-    console.log("User posts loaded");
-    callback();
-  }, 2000);
+    setTimeout(() => {
+      console.log("User posts loaded");
+      resolve();
+    }, 2000);
+  });
 }
 
-function getOrders(callback){
-  console.log("Getting user orders...");
+function getOrders() {
+  return new Promise((resolve, reject) => {
+    console.log("Getting user orders...");
 
-  setTimeout(() => {
-    console.log("User orders loaded");
-    callback();
-  }, 1000);
+    setTimeout(() => {
+      console.log("User orders loaded");
+      resolve();
+    }, 1000);
+  });
 }
 
-function getOrderDetails(callback){
-  console.log("Getting order details...");
+function getOrderDetails() {
+  return new Promise((resolve, reject) => {
+    console.log("Getting order details...");
 
-  setTimeout(() => {
-    console.log("User order details loaded");
-    callback();
-  }, 3000);
+    setTimeout(() => {
+      console.log("User order details loaded");
+      resolve();
+    }, 3000);
+  });
 }
 
 login()
-.then(getUser)
-.then(getUserPosts)
-.then(getOrders)
-.then(getOrderDetails)
-.catch((error) => {
-  console.log(error);
-})
-.finally(() => {
-  console.log("Operation completed.");
-})
+  .then(getUser)
+  .then(getUserPosts)
+  .then(getOrders)
+  .then(getOrderDetails)
+  .catch((error) => {
+    console.log("Error:", error);
+  })
+  .finally(() => {
+    console.log("Operation completed.");
+  });
