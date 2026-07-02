@@ -59,7 +59,7 @@ function getOrders(callback){
 }
 
 function getOrderDetails(callback){
-  console.log("Getting order detials...");
+  console.log("Getting order details...");
 
   setTimeout(() => {
     console.log("User order details loaded");
@@ -68,4 +68,13 @@ function getOrderDetails(callback){
 }
 
 login()
-.then()
+.then(getUser)
+.then(getUserPosts)
+.then(getOrders)
+.then(getOrderDetails)
+.catch((error) => {
+  console.log(error);
+})
+.finally(() => {
+  console.log("Operation completed.");
+})
