@@ -48,3 +48,24 @@ function getUserPosts(callback){
     callback();
   }, 2000);
 }
+
+function getOrders(callback){
+  console.log("Getting user orders...");
+
+  setTimeout(() => {
+    console.log("User orders loaded");
+    callback();
+  }, 1000);
+}
+
+function getOrderDetails(callback){
+  console.log("Getting order detials...");
+
+  setTimeout(() => {
+    console.log("User order details loaded");
+    callback();
+  }, 3000);
+}
+
+login()
+.then()
