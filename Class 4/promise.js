@@ -88,3 +88,29 @@ login()
   .finally(() => {
     console.log("Operation completed.");
   });
+
+  function getOffer() {
+    return new Promise((resolve, reject) => {
+      console.log("Getting offer...");
+
+      setTimeout(() => {
+        console.log("Offer loaded");
+        resolve();
+      }, 2000);
+    })
+  }
+
+function getCategories() {
+  return new Promise((resolve, reject) => {
+    let success = tru;
+    setTimeout(() => {
+      if (success) {
+        console.log("Categories loaded");
+        resolve();
+      } else {
+        reject("Failed to load categories");
+      }
+    }, 2000);
+  
+  })
+}
