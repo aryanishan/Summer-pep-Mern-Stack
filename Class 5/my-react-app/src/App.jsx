@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <h1>Welcome to My React App</h1>
-      <p>This is a simple React app.</p>
+      {/* <p>This is a simple React app.</p> */}
       <p>Counter</p>
       <p class="counter">{count}</p>
       <button class="btn" onClick={() => setCount(count - 1)}>-</button>
