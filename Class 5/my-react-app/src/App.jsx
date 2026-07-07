@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import FormComponent from './components/formcomponent'
 
 function App() {
   const [count, setCount] = useState(0);
@@ -39,6 +40,8 @@ function App() {
           </button>
         </div>
       </section>
+
+      <FormComponent />
     </main>
   )
 }
