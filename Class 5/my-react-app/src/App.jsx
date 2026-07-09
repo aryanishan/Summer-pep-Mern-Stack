@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import FormComponent from './components/formcomponent'
+import FileSelector from './components/FileSelector'
 
 function App() {
   const [count, setCount] = useState(0);
@@ -42,6 +43,7 @@ function App() {
       </section>
 
       <FormComponent />
+      <FileSelector />
     </main>
   )
 }
