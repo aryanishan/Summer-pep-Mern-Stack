@@ -2,13 +2,16 @@ function Navbar({ activePage, navItems, onNavigate, onToggleTheme, theme }) {
   const nextTheme = theme === "light" ? "dark" : "light";
 
   return (
-    <header className="navbar">
-      <button className="brand" type="button" onClick={() => onNavigate("home")}>
-        <span className="brand-mark">DB</span>
-        <span>DummyBrand</span>
+    <aside className="dashboard-sidebar">
+      <button className="brand-block" type="button" onClick={() => onNavigate("dashboard")}>
+        <span className="brand-logo">D</span>
+        <span>
+          <strong>DashBoard</strong>
+          <small>Class Manager</small>
+        </span>
       </button>
 
-      <nav className="nav-links" aria-label="Main navigation">
+      <nav className="sidebar-nav" aria-label="Dashboard navigation">
         {navItems.map((item) => (
           <button
             aria-current={activePage === item.id ? "page" : undefined}
@@ -17,24 +20,26 @@ function Navbar({ activePage, navItems, onNavigate, onToggleTheme, theme }) {
             onClick={() => onNavigate(item.id)}
             type="button"
           >
+            <span>{item.shortLabel}</span>
             {item.label}
           </button>
         ))}
       </nav>
 
-      <button
-        aria-label={`Switch to ${nextTheme} theme`}
-        className="theme-toggle"
-        onClick={onToggleTheme}
-        title={`Switch to ${nextTheme} theme`}
-        type="button"
-      >
-        <span className="toggle-track" aria-hidden="true">
-          <span className="toggle-thumb" />
-        </span>
-        <span className="theme-label">{theme === "light" ? "Light" : "Dark"}</span>
-      </button>
-    </header>
+      <div className="sidebar-footer">
+        <button
+          aria-label={`Switch to ${nextTheme} theme`}
+          className="theme-toggle"
+          onClick={onToggleTheme}
+          type="button"
+        >
+          <span className="toggle-track" aria-hidden="true">
+            <span className="toggle-thumb" />
+          </span>
+          <span>{theme === "light" ? "Light mode" : "Dark mode"}</span>
+        </button>
+      </div>
+    </aside>
   );
 }
 
