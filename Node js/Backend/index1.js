@@ -12,6 +12,14 @@ app.get('/', (req, res) => {
   return;
 });
 
+app.post('/signup', (req, res) => {
+  const data = req.body;
+  console.log("Data: ", data);
+
+  const users = JSON.parse(await fs.readfile("../data/users.json", "utf-8"));
+  console.log("Users: ", users);
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 
