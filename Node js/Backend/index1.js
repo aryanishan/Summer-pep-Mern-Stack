@@ -70,36 +70,29 @@ app.get("/data/:id", async (req, res) => {
 // Create Data
 app.post("/data", async (req, res) => {
 
-    console.log("Request Body:", req.body);
+    console.log(req.body);
 
-    if (Object.keys(req.body).length === 0) {
+    if (!Array.isArray(req.body)) {
         return res.status(400).json({
-            error: "Request body is required"
+            error: "Please send an array of users."
         });
     }
 
     try {
-        const data = await readData();
 
-        const newUser = {
-            id: Date.now(),
-            ...req.body
-        };
-
-        data.push(newUser);
-
-        await saveData(data);
+        await saveData(req.body);
 
         res.status(201).json({
-            message: "Data saved successfully",
-            data: newUser
+            message: "Users saved successfully",
+            data: req.body
         });
 
     } catch (error) {
         res.status(500).json({
-            error: "Unable to save data."
+            error: "Unable to save users."
         });
     }
+
 });
 
 // Update Data
